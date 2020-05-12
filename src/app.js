@@ -6,6 +6,9 @@ const forecast = require("./utils/forecast");
 
 const app = express();
 
+// for heroku,or is used coz process.env.PORT will be used by heroku,and 3000 by local compiler so use either this or that,both heroku and our local env will support the app fine now
+const port = process.env.PORT || 3000;
+
 //define path for express config
 const publicDirectoryPath = path.join(__dirname, "../public"); //looks up for src
 const viewsPath = path.join(__dirname, "../templates/views"); //join he source,used for views,if the defult name i.e. views is changed to nythng else like templates
@@ -86,8 +89,8 @@ app.get("*", (req, res) => {
     res.send("404,page not available");
 });
 
-app.listen(3000, () => {
-    console.log("Server is up on port 3000.");
+app.listen(port, () => {
+    console.log("Server is up on" + port);
 });
 
 // $ nodemon src/app.js -e hbs,js to run the code
