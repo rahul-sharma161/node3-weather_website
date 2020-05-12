@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <h1>{{>header}}</h1>
+
+    <form>
+        <input placeholder="location">
+        <button>Search</button>
+
+    </form>
+    {{!-- for finall showing the data to the user screen (already seen in the console) thr query selectorpicks up the hing from here --}}
+    <p id="message-1"></p>
+    <p id="message-2"> </p>
+
+
+
+
+
+    <p>{{>footer}}</p>
+    <script src="/js/app.js"></script>
+    {{!-- moved at the end to parse the form,when eventlistner is called etc --}}
+
+</body>
+
+</html>
